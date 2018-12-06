@@ -12,6 +12,7 @@ ja:
     attributes:
       record:
         id: ID
+        week: 曜日
         name: 名称
         description: 詳細
         created_at: 登録日時

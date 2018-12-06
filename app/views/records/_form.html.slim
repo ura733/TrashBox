@@ -1,0 +1,13 @@
+- if record.errors.present?
+  ul#error_explanation
+    - record.errors.full_messages.each do |msg|
+      li= msg
+/form_withはHTMLのformを出力する
+= form_with model: record, local: true do |f|
+  .form-group
+    = f.label :week
+    = f.text_field :name, class: 'form-control', id: 'record_name'
+  .form-group
+    = f.label :description
+    = f.text_area :description, rows: 5, class: 'form-control', id: 'record_description'
+  = f.submit nil, class: 'btn btn-primary'
