@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'trash_box#home'
+  
+  get '/about', to: 'trash_box#about'
+  get '/help', to: 'trash_box#help'
+  get '/contact', to: 'trash_box#contact'
 end
