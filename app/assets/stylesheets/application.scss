@@ -1,4 +1,6 @@
 @import "bootstrap";
+@import "./trash_box";
+@import "./records";
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -12,4 +14,9 @@
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+// 全画面表示
+.box {
+  width: 100vw;
+  height: 100vh;
 }

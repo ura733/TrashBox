@@ -31,9 +31,6 @@ class RecordsController < ApplicationController
     end
   end
 
-  def update
-  end
-
   def destroy
     record = current_user.records.find(params[:id])
     record.destroy
@@ -43,6 +40,6 @@ class RecordsController < ApplicationController
   private
   def record_params
     #nameとdescription情報のみ受け取る
-    params.require(:record).permit(:name, :description)
+    params.require(:record).permit(:name, :week)
   end
 end

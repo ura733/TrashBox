@@ -1,2 +1,3 @@
-h1 Records#edit
-p Find me in app/views/records/edit.html.slim
+h1.container 編集
+/localオプションはパーシャル内のローカル変数を設定
+= render partial: 'form', locals: { record: @record }

@@ -1,13 +1,16 @@
+
 - if record.errors.present?
   ul#error_explanation
     - record.errors.full_messages.each do |msg|
       li= msg
-/form_withはHTMLのformを出力する
-= form_with model: record, local: true do |f|
-  .form-group
-    = f.label :week
-    = f.text_field :name, class: 'form-control', id: 'record_name'
-  .form-group
-    = f.label :description
-    = f.text_area :description, rows: 5, class: 'form-control', id: 'record_description'
-  = f.submit nil, class: 'btn btn-primary'
+.container
+
+  /form_withはHTMLのformを出力する
+  = form_with model: record, local: true do |f|
+    .form-group
+      = f.label :week
+      = f.select :week, ['月','火','水','木','金','土','日']
+    .form-group
+      = f.label :name
+      = f.text_area :name, rows: 1, class: 'form-control', id: 'record_name'
+    = f.submit nil, class: 'btn btn-primary'
