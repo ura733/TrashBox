@@ -1,0 +1,22 @@
+p
+- if @user.errors.present?
+  ul#error_ecplanation
+    - @user.errors.full_messages.each do |msg|
+      .container.alert-danger= msg
+
+h1.container ユーザー登録
+
+.container= form_with model: @user, local: true do |f|
+  .form-group
+    = f.label :name, '名前'
+    = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label :email, 'メールアドレス'
+    = f.text_field :email, class: 'form-control'
+  .form-group
+    = f.label :password, 'パスワード'
+    = f.password_field :password, class: 'form-control'
+  .form-group
+    = f.label :password_confirmation, 'パスワード(確認)'
+    = f.password_field :password_confirmation, class: 'form-control'
+  .container= f.submit '登録する', class: 'btn btn-primary'

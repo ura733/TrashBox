@@ -1,3 +1,8 @@
+- if user.errors.present?
+  ul#error_ecplanation
+    - user.errors.full_messages.each do |msg|
+      li= msg
+      
 h1 ユーザー登録
 
 .nav.justify-content-end

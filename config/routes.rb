@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'login', to: 'sessions#new'
+  get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
+  get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
@@ -7,6 +9,9 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
   end
+
+  resources :users, only: [:show, :create, :new]
+
   root to: 'trash_box#home'
 
   get '/about', to: 'trash_box#about'
